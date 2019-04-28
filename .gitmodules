@@ -1,0 +1,6 @@
+[submodule "safe-line"]
+	path = safe-line
+	url = https://github.com/campus-hack-shenanigans/safe-line
+[submodule "pacient-store"]
+	path = pacient-store
+	url = https://github.com/campus-hack-shenanigans/pacient-store
