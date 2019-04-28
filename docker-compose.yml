@@ -1,0 +1,23 @@
+version: "3"
+services:
+  redis:
+    image: redis
+    container_name: store
+    expose:
+      - 6370
+  server:
+    build: ./pacient-store
+    volumes:
+      - ./pacient-store:/opt/server
+    depends_on:
+      - redis
+    ports:
+      - 3000:3000
+    command: npm run dev
+  client:
+    build: ./safe-line
+    volumes:
+      - ./safe-line:/opt/server
+    ports:
+      - 3001:3000
+    command: npm start
